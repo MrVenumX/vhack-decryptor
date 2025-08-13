@@ -1,7 +1,7 @@
 import EventEmitter from "events";
 import net from "net";
 
-import AESEncryption from "@src/utils/AESEncryption";
+import AESEncryption from "./utils/AESEncryption";
 
 interface ConnectionEvents {
   close: [];

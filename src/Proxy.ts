@@ -1,7 +1,7 @@
 import EventEmitter from "events";
 import net from "net";
 
-import Connection from "@src/Connection";
+import Connection from "./Connection";
 
 interface ProxyOptions {
   host?: string;
