@@ -72,7 +72,7 @@ class Connection extends EventEmitter<ConnectionEvents> {
         const payloadString = payload.toString("utf-8");
         remoteBuffer = remoteBuffer.subarray(newLineIndex + 2);
 
-        const match = payloadString.match(/^:([a-zA-Z0-9]):?:?\s?/);
+        const match = payloadString.match(/^:([a-zA-Z0-9]+):?:?\s?/);
         if (match === null) return;
         const param = payloadString.slice(match[0].length).trim();
         const command = match[1].toLowerCase();
@@ -98,7 +98,7 @@ class Connection extends EventEmitter<ConnectionEvents> {
         const payloadString = payloadDecrypted.toString("utf-8");
         localBuffer = localBuffer.subarray(newLineIndex + 2);
 
-        const match = payloadString.match(/^:([a-zA-Z0-9]):?:?\s?/);
+        const match = payloadString.match(/^:([a-zA-Z0-9]+):?:?\s?/);
         if (match === null) return;
         const param = payloadString.slice(match[0].length).split("::");
         const command = match[1].toLowerCase();
