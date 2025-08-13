@@ -1,0 +1,1 @@
+console.debug("Entry point");

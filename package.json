@@ -1,0 +1,27 @@
+{
+  "name": "vhack-decryptor",
+  "version": "1.0.0",
+  "description": "Client packet decryptor for vHack Revolution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ./tsconfig.json",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrVenumX/vhack-decryptor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MrVenumX/vhack-decryptor/issues"
+  },
+  "homepage": "https://github.com/MrVenumX/vhack-decryptor#readme",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2"
+  }
+}
