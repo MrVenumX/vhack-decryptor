@@ -78,7 +78,9 @@ class Connection extends EventEmitter<ConnectionEvents> {
         const command = match[1].toLowerCase();
         this.emit("upstream", { command, param, payload }, cancel);
         if (!isCanceled) {
-          this._localSocket.write(payload);
+          this._localSocket.write(
+            Buffer.concat([payload, Buffer.from("\r\n")])
+          );
         }
       }
     });
@@ -102,7 +104,9 @@ class Connection extends EventEmitter<ConnectionEvents> {
         const command = match[1].toLowerCase();
         this.emit("downstream", { command, param, payload: payload }, cancel);
         if (!isCanceled) {
-          this._remoteSocket.write(payload);
+          this._remoteSocket.write(
+            Buffer.concat([payload, Buffer.from("\r\n")])
+          );
         }
       }
     });
