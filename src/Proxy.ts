@@ -31,7 +31,11 @@ class Proxy extends EventEmitter<ProxyEvents> {
   private initializeProxy() {
     this._server.on("connection", (socket) => {
       const connection = new Connection(socket);
-      console.debug("New connection %s:%d");
+      console.debug(
+        "New connection %s:%d",
+        socket.remoteAddress,
+        socket.remotePort
+      );
 
       connection.on("close", () =>
         console.debug(
