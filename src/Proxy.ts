@@ -65,7 +65,7 @@ class Proxy extends EventEmitter<ProxyEvents> {
   public listen(callback?: () => void): void {
     const _host = this._options.host || "127.0.0.1";
     const _port = this._options.port || 8182;
-    this._server.listen(_port, _host, () => callback);
+    this._server.listen(_port, _host, callback);
   }
 }
 
